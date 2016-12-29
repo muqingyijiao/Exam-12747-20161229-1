@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.yijiao.sm.mapper.FilmMapper" >
+  <insert id="insertSelective" parameterType="cn.yijiao.sm.po.Film" >
+    insert into film
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="filmId != null" >
+        film_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="releaseYear != null" >
+        release_year,
+      </if>
+      <if test="languageId != null" >
+        language_id,
+      </if>
+      <if test="originalLanguageId != null" >
+        original_language_id,
+      </if>
+      <if test="rentalDuration != null" >
+        rental_duration,
+      </if>
+      <if test="rentalRate != null" >
+        rental_rate,
+      </if>
+      <if test="length != null" >
+        length,
+      </if>
+      <if test="replacementCost != null" >
+        replacement_cost,
+      </if>
+      <if test="rating != null" >
+        rating,
+      </if>
+      <if test="specialFeatures != null" >
+        special_features,
+      </if>
+      <if test="lastUpdate != null" >
+        last_update,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="filmId != null" >
+        #{filmId,jdbcType=SMALLINT},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseYear != null" >
+        #{releaseYear,jdbcType=DATE},
+      </if>
+      <if test="languageId != null" >
+        #{languageId,jdbcType=TINYINT},
+      </if>
+      <if test="originalLanguageId != null" >
+        #{originalLanguageId,jdbcType=TINYINT},
+      </if>
+      <if test="rentalDuration != null" >
+        #{rentalDuration,jdbcType=TINYINT},
+      </if>
+      <if test="rentalRate != null" >
+        #{rentalRate,jdbcType=DECIMAL},
+      </if>
+      <if test="length != null" >
+        #{length,jdbcType=SMALLINT},
+      </if>
+      <if test="replacementCost != null" >
+        #{replacementCost,jdbcType=DECIMAL},
+      </if>
+      <if test="rating != null" >
+        #{rating,jdbcType=CHAR},
+      </if>
+      <if test="specialFeatures != null" >
+        #{specialFeatures,jdbcType=CHAR},
+      </if>
+      <if test="lastUpdate != null" >
+        #{lastUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
